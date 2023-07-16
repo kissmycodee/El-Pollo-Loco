@@ -6,16 +6,16 @@ let playMusic2 = new Audio('audio/music2.mp3');
 let musicOn = false;
 
 
-function checkOrientation() {
-    if (window.matchMedia("(orientation: landscape)").matches) {
-        if (window.innerHeight < 480) {
-            newHeight = window.innerHeight;
-            document.getElementById('canvas').style.height = `${newHeight}px`;
-        }
-    } else {
-        document.getElementById('canvas').style.height = `100%`;
-    }
-}
+// function checkOrientation() {
+//     if (window.matchMedia("(orientation: landscape)").matches) {
+//         if (window.innerHeight < 480) {
+//             newHeight = window.innerHeight;
+//             document.getElementById('canvas').style.height = `${newHeight}px`;
+//         }
+//     } else {
+//         document.getElementById('canvas').style.height = `100%`;
+//     }
+// }
 
 function init() {
     canvas = document.getElementById('canvas');
