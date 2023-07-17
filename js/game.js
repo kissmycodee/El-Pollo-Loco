@@ -1,21 +1,24 @@
-let canvas;  
-let world;   
+let canvas;
+let world;
 let keyboard = new Keyboard();
 let playMusic1 = new Audio('audio/music1.mp3');
 let playMusic2 = new Audio('audio/music2.mp3');
 let musicOn = false;
 
 
-// function checkOrientation() {
-//     if (window.matchMedia("(orientation: landscape)").matches) {
-//         if (window.innerHeight < 480) {
-//             newHeight = window.innerHeight;
-//             document.getElementById('canvas').style.height = `${newHeight}px`;
-//         }
-//     } else {
-//         document.getElementById('canvas').style.height = `100%`;
-//     }
-// }
+
+function checkOrientation() {
+    if (window.matchMedia("(orientation: landscape)").matches) {
+        if (window.innerHeight < 480) {
+            newHeight = window.innerHeight;
+            document.getElementById('canvas').style.height = `${newHeight}px`;
+        }
+    } else {
+        document.getElementById('canvas').style.height = `100%`;
+    }
+}
+
+
 
 function init() {
     canvas = document.getElementById('canvas');
@@ -41,6 +44,8 @@ function screensize() {
 
 }
 
+
+
 function start() {
     document.getElementById('startScreen').classList.add('d-none');
     document.getElementById('btn').classList.add('d-none');
@@ -51,12 +56,14 @@ function start() {
     document.getElementById('throw').classList.remove('d-none');
 }
 
+
+
 function info() {
     document.getElementById('infoBox').classList.toggle('d-none');
 }
 
 
-//keyboard object, Tasten werden gedrückt
+
 window.addEventListener("keydown", (e) => {
     if (e.keyCode == 39) {
         keyboard.RIGHT = true;
@@ -64,14 +71,12 @@ window.addEventListener("keydown", (e) => {
     if (e.keyCode == 37) {
         keyboard.LEFT = true;
     }
-
     if (e.keyCode == 38) {
         keyboard.UP = true;
     }
     if (e.keyCode == 40) {
         keyboard.DOWN = true;
     }
-
     if (e.keyCode == 32) {
         keyboard.SPACE = true;
     }
@@ -81,22 +86,21 @@ window.addEventListener("keydown", (e) => {
 });
 
 
-//keyboard object, Tasten werden losgelassen
+
 window.addEventListener("keyup", (e) => {
+
     if (e.keyCode == 39) {
         keyboard.RIGHT = false;
     }
     if (e.keyCode == 37) {
         keyboard.LEFT = false;
     }
-
     if (e.keyCode == 38) {
         keyboard.UP = false;
     }
     if (e.keyCode == 40) {
         keyboard.DOWN = false;
     }
-
     if (e.keyCode == 32) {
         keyboard.SPACE = false;
     }
@@ -105,17 +109,23 @@ window.addEventListener("keyup", (e) => {
     }
 });
 
+
 function touchDownLeft() {
     keyboard.LEFT = true;
 }
+
+
 
 function touchUpLeft() {
     keyboard.LEFT = false;
 }
 
+
+
 function touchDownRight() {
     keyboard.RIGHT = true;
 }
+
 
 function touchUpRight() {
     keyboard.RIGHT = false;
@@ -126,17 +136,23 @@ function touchDownJump() {
     keyboard.UP = true;
 }
 
+
+
 function touchUpJump() {
     keyboard.UP = false;
 }
+
 
 function touchDownThrow() {
     keyboard.SPACE = true;
 }
 
+
+
 function touchUpThrow() {
     keyboard.SPACE = false;
 }
+
 
 
 function music1() {
@@ -149,6 +165,7 @@ function music1() {
     playMusicFunction1();
 }
 
+
 function music2() {
     if (musicOn == false) {
         musicOn = true;
@@ -159,6 +176,7 @@ function music2() {
     playMusicFunction2();
 }
 
+
 function playMusicFunction1() {
     if (musicOn == true) {
         playMusic1.play();
@@ -167,6 +185,8 @@ function playMusicFunction1() {
         playMusic1.pause();
     }
 }
+
+
 
 function playMusicFunction2() {
     if (musicOn == true) {

@@ -170,7 +170,21 @@ a {
     display: none !important;
 }
 
-
+@media only screen and (max-width: 900px) {
+    .mobile_controlls {
+        display: flex;
+    }
+    .restart_mobile {
+        left: 38%;
+    }
+    canvas {
+        height: 50vh;
+        width: 80%;
+        left: 10%;
+        max-height: none;
+        min-width: 480px;
+    }
+}
 
 @media only screen and (max-width: 850px) {
     .input-container {
